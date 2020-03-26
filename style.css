@@ -1,0 +1,26 @@
+/* base stylings */
+body {
+    background: #404040;
+    display: flex;
+    justify-content: center;
+    margin: 200px 0;
+}
+
+/* make sure ball does not get cut off when at edge of svg */
+svg:not(:root) {
+    overflow: visible;
+}
+
+/* ball motion path animation */
+.ball {
+    motion-path: path('M 2.51 2.96 298.51 298.96 596.01 1.46 892.51 297.96 1181.01 9.46 1181.01 298.96 882.76 0.71 584.51 298.96 287.01 1.46 0.51 287.96 2.51 2.96');
+    offset-path: path('M 2.51 2.96 298.51 298.96 596.01 1.46 892.51 297.96 1181.01 9.46 1181.01 298.96 882.76 0.71 584.51 298.96 287.01 1.46 0.51 287.96 2.51 2.96');
+    animation: move 9s ease-in-out infinite;
+}
+
+@keyframes move {
+    100% { 
+        motion-offset: 100%;
+        offset-distance: 100%;
+    }
+}
